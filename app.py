@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy
 import pandas
+import altair as alt
 
 st.title('Hello, world')
 st.write('playing with a cubic function')
@@ -28,6 +29,12 @@ data['y']=a*data['x']**3+b*data['x']**2+c*data['x']+d
 
 st.write(a,b,c)
 
-st.line_chart(data)
+line_chart = alt.Chart(data).mark_line().encode(
+    x='x',
+    y='y',
+    tooltip=['x', 'y'],
+)
+st.altair_chart(line_chart.interactive(), use_container_width=True)
+
 
 
