@@ -6,10 +6,10 @@ import streamlit as st
 import scipy.stats
 
 def beta_distribution():
-    alpha = st.sidebar.slider('alpha', value=0.5, min_value=0.1,
+    alpha = st.sidebar.slider('alpha', value=1.5, min_value=1.,
                               max_value=10.0, step=0.1, format='%.1f')
-    beta = st.sidebar.slider('beta', value=0.5,
-                             min_value=0.1, max_value=10.0, step=0.1,
+    beta = st.sidebar.slider('beta', value=1.5,
+                             min_value=1.0, max_value=10.0, step=0.1,
                              format='%.1f')
 
     x = np.linspace(start=0, stop=1, num=400)
